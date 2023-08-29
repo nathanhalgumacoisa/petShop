@@ -30,17 +30,20 @@ class ListaPets{
 const petsarray = new ListaPets
 //criação da primeira function para pegar os dados dos inputs
 function criarPet(){
-    const tutor = document.getElementById("tutor").value;
-    const nome = document.getElementById("nome").value;
-    const especie = document.getElementById("especie").value;
-    const foto = document.getElementById("foto").value;
-    const nascimento = document.getElementById("data").value;
+    let tutor = document.getElementById("tutor").value;
+    let nome = document.getElementById("nome").value;
+    let especie = document.getElementById("especie").value;
+    let foto = document.getElementById("foto").value;
+    let nascimento = document.getElementById("data").value;
 //criando  variavel pet para colocar as informações dos inputs pro objeto
-    const pet = new Pet(tutor, nome, especie, foto, nascimento);
+    let pet = new Pet(tutor, nome, especie, foto, nascimento);
     petsarray.adicionar(pet);
     console.log(petsarray);
     //chamando as functions
     limparCampos();
+    mensagemDeErro()
+    arrumarData()
+    mostrarCadastro()
 }
 //criação da function limparCampos para... limpar os campos
 function limparCampos(){
@@ -64,7 +67,21 @@ function mensagemDeErro(msg){
         document.getElementById("erro").classList.add("hidden")
     },4000);
 }
+
 //criação da function mostrarCadastro para  colocar as  informações no html
 function mostrarCadastro(){
-
-}
+        let html = "";
+        petsarray.forEach((pet)=> {
+            html += `
+                <div id="cadastro-pet">
+                    <h3>Pet: ${pet.nome}</h3>
+                    <p>Tutor: ${pet.tutor}</p>
+                    <p>Especie: ${pet.especie}</p>
+                    <p>Idade: ${pet.idade}<p>
+                    <p>Data de nascimento: ${arrumarData(pet.nascimento)}</p>
+                    <img src="${pet.foto}"
+                </div>
+            `;
+        });
+        document.getElementById("content-container").innerHTML = html;
+    }
