@@ -8,6 +8,7 @@ class Pet{
         this.data = data;
     }
 }
+//criando a class ListaPet  para criar o parametro do array
 class ListaPets{
     constructor(){
         this.petsarray = [];
