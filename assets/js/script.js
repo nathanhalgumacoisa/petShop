@@ -44,6 +44,7 @@ function criarPet(){
     mensagemDeErro()
     arrumarData()
     mostrarCadastro()
+    algumInputVazio()
 }
 //criação da function limparCampos para... limpar os campos
 function limparCampos(){
@@ -67,7 +68,20 @@ function mensagemDeErro(msg){
         document.getElementById("erro").classList.add("hidden")
     },4000);
 }
-
+//criação da function algumInputVazio
+function algumInputVazio(){
+    let tutor = document.getElementById("tutor").value;
+    let nome = document.getElementById("nome").value;
+    let especie = document.getElementById("especie").value;
+    let foto = document.getElementById("foto").value;
+    let nascimento = document.getElementById("data").value;
+    if(tutor == "" || nome == "" || especie == "" || foto == "" || nascimento == ""){
+        mensagemDeErro("Preencha todos os campos");
+        return;
+    }else{
+        mostrarCadastro();
+    }
+}
 //criação da function mostrarCadastro para  colocar as  informações no html
 function mostrarCadastro(){
         let html = "";
@@ -84,4 +98,5 @@ function mostrarCadastro(){
             `;
         });
         document.getElementById("content-container").innerHTML = html;
+        console.log(html);
     }
