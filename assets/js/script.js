@@ -56,3 +56,11 @@ function arrumarData(data){
     let dataBr = dataGringa[2] + "/" + dataGringa[1] + "/" + dataGringa[0];
     return dataBr
 }
+//criação da function mensagemDeErro para aparecer
+function mensagemDeErro(){
+    
+}
+//criação da function mostrarCadastro para  colocar as  informações no html
+function mostrarCadastro(){
+
+}
