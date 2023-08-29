@@ -28,7 +28,15 @@ function criarPet(){
 //criando  variavel pet para colocar as informações dos inputs pro objeto
     const pet = new Pet(tutor, nome, especie, foto, data);
     petsarray.adicionar(pet);
-    console.log(petsarray)
+    console.log(petsarray);
+    //chamando as functions
+    limparCampos()
 }
-
-
+//criação da função limparCampos para... limpar os campos
+function limparCampos(){
+     document.getElementById("tutor").value = ""
+     document.getElementById("nome").value = ""
+     document.getElementById("especie").value = ""
+     document.getElementById("foto").value = ""
+     document.getElementById("data").value = ""
+}
