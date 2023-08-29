@@ -17,3 +17,18 @@ class ListaPets{
         this.petsarray.push(pet);
     }
 }
+const petsarray = new ListaPets
+//criação da primeira function para pegar os dados dos inputs
+function criarPet(){
+    const tutor = document.getElementById("tutor").value;
+    const nome = document.getElementById("nome").value;
+    const especie = document.getElementById("especie").value;
+    const foto = document.getElementById("foto").value;
+    const data = document.getElementById("data").value;
+//criando  variavel pet para colocar as informações dos inputs pro objeto
+    const pet = new Pet(tutor, nome, especie, foto, data);
+    petsarray.adicionar(pet);
+    console.log(petsarray)
+}
+
+
