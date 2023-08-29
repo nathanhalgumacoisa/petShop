@@ -50,5 +50,9 @@ function limparCampos(){
      document.getElementById("foto").value = "";
      document.getElementById("data").value = "";
 }
-
-
+//criação da function arrumarData para deixar as datas no padrão br
+function arrumarData(data){
+    let dataGringa = data.split("-");
+    let dataBr = dataGringa[2] + "/" + dataGringa[1] + "/" + dataGringa[0];
+    return dataBr
+}
