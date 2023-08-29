@@ -57,8 +57,12 @@ function arrumarData(data){
     return dataBr
 }
 //criação da function mensagemDeErro para aparecer
-function mensagemDeErro(){
-    
+function mensagemDeErro(msg){
+    document.getElementById("erro").innerHTML = msg;
+    document.getElementById("erro").classList.remove("hidden");
+    setTimeout(function(){
+        document.getElementById("erro").classList.add("hidden")
+    },4000);
 }
 //criação da function mostrarCadastro para  colocar as  informações no html
 function mostrarCadastro(){
